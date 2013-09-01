@@ -2,7 +2,7 @@
 :: **Dependencies**: None
 
 ::=============================================================::
-:: COPYRIGHT 2013, REVISED 2013, Jeff Rimko.                   ::
+:: DEVELOPED 2013, REVISED 2013, Jeff Rimko.                   ::
 ::=============================================================::
 
 ::=============================================================::
@@ -26,6 +26,7 @@ set BAT_CHKDEP=..\lib\chk_dep.bat
 :: SECTION: Main Body                                          ::
 ::=============================================================::
 
+:: Check for Python.
 call %BAT_CHKDEP%^
     call:ChkDep^
     "Python"^
@@ -33,9 +34,21 @@ call %BAT_CHKDEP%^
     "www.python.org"^
     "2.6.6"^
     python -V
-
-echo ----
+echo.
 echo Global variable DEP_OK = %DEP_OK%
-echo ----
+echo.
+
+:: Check for Python.
+call %BAT_CHKDEP%^
+    call:ChkDepVer^
+    "Python"^
+    "Python language interpreter."^
+    "www.python.org"^
+    "2.6.6"^
+    python -V
+echo.
+echo Global variable DEP_OK = %DEP_OK%
+echo.
+
 pause
 exit /b 0
