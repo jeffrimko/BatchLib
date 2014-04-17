@@ -28,7 +28,7 @@ set BAT_RUNCMD=..\lib\run_cmd.bat
 :: SECTION: Main Body                                          ::
 ::=============================================================::
 
-:: Check for Python.
+:: Check for Posix `ls` command.
 call %BAT_CHKDEP%^
     call:ChkDepQwk^
     ls --help
