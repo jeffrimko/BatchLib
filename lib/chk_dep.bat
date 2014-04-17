@@ -118,13 +118,13 @@ goto:eof
 :: set outside the function
 ::
 :: **Example**:
-:: call::ChkDep^
+:: call::ChkDepVer^
 ::     "Utility"^
 ::     "Does something."^
 ::     "www.website.com"^
 ::     "1.2.3"^
 ::     utility -h
-:: call::ChkDep^
+:: call::ChkDepVer^
 ::     "Utility"^
 ::     "Does something."^
 ::     "www.website.com"^
@@ -157,6 +157,50 @@ if %ERRORLEVEL% neq 0 (
     goto:eof
 )
 %CMD% 2>&1 | find "%DEP_VER%" >NUL
+if %ERRORLEVEL% neq 0 (
+    echo     NOT FOUND!
+    set DEP_OK=0
+    goto:eof
+)
+echo     OK.
+goto:eof
+
+::-------------------------------------------------------------::
+:: Quickly checks if a dependency is available.
+::
+:: **Params**:
+::  - 1+ - Non-blocking command to check if installed; usually version display
+::         or help.
+::
+:: **Attention**:
+:: Do not use quotes around the non-blocking command.
+::
+:: **Preconditions**:
+:: The global variable DEP_OK should be set to 1 before the first call to this
+:: function.
+::
+:: **Postconditions**:
+:: The global variable DEP_OK will be set to 0 if a dependency check fails.
+:: This variable is not set back to 1 by this function, it may be explicitly
+:: set outside the function
+::
+:: **Example**:
+:: call::ChkDepQwk^
+::     utility -h
+:: call::ChkDepQwk^
+::     utility -c "non-blocking cmd"
+::-------------------------------------------------------------::
+:ChkDepQwk
+echo Checking dependency for %~1...
+set CMD=%1
+shift
+:chkdep_shift_next
+if [%1] neq [] (
+    set CMD=%CMD% %1
+    shift
+    goto:chkdep_shift_next
+)
+%CMD% > NUL 2>&1
 if %ERRORLEVEL% neq 0 (
     echo     NOT FOUND!
     set DEP_OK=0

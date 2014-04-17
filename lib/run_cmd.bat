@@ -3,7 +3,7 @@
 :: None.
 
 ::=============================================================::
-:: COPYRIGHT 2013, REVISED 2013, Jeff R.                       ::
+:: DEVELOPED 2013, REVISED 2013, Jeff Rimko.                   ::
 ::=============================================================::
 
 ::=============================================================::
@@ -26,14 +26,14 @@ exit /b 0
 
 ::-------------------------------------------------------------::
 :: Function to run a command.
-:: __Params__:
+:: **Params**:
 ::  - 1 - Description of command.
 ::  - 2+ - Command to execute.
-:: __Attention__:
+:: **Attention**:
 :: Quotes can be used around the first parameter but do not put them around the
 :: remaining params.  Quotes may be included in the remaining params if they
 :: are needed for the command.
-:: __Example__:
+:: **Example**:
 :: call run_cmd.bat "Show directory contents" ls
 ::-------------------------------------------------------------::
 :RunCmd
@@ -47,7 +47,7 @@ if [%1] neq [] (
     shift
     goto:shift_next
 )
-echo  ^> %CMD%
+echo  ^$ %CMD%
 echo /----------------
 %CMD%
 echo \----------------

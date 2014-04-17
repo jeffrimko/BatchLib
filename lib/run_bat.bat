@@ -30,10 +30,10 @@ exit /b 0
 ::-------------------------------------------------------------::
 :: Function to launch a batch file in a separate window and waits for it to
 :: finish.
-:: __Params__:
+:: **Params**:
 ::  - 1 - Description of batch file.
 ::  - 2+ - Path to batch file.
-:: __Attention__:
+:: **Attention**:
 :: Quotes can be used around the first parameter but do not put them around the
 :: remaining params.
 ::-------------------------------------------------------------::
