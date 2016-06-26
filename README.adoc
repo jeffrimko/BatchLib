@@ -1,8 +1,16 @@
-BatchLib
-========
+= BatchLib
 
-This project provides a library of general purpose batch files. This library can be included in any Windows project to provide basic functions for writing more complex batch files. The following are examples of the functionality provided by this library:
+== Introduction
+This project provides a library of general purpose Microsoft batch files. This library can be included in any Windows project to provide basic functions for writing more complex batch files. The following are examples of the functionality provided by this library:
 
   - Check if a dependency is installed on the current machine.
   - Run a batch file from another batch file.
-  - Run a command from a batch file (useful for example scripts).
+  - Demonstrate a command from a batch file (useful for example scripts).
+
+== Status
+The status of this project is **beta**. This project is suitable for use but there may be incompatibilities in new releases.
+
+== FAQ
+[qanda]
+Who is this project for?::
+    Anyone with the need to write batch scripts! Batch scripts are useful since they are practically guaranteed to execute on modern Microsoft platforms natively. An example usage would be to provide a dependency checking script with a project; this script would allow users to check if their machine meets the requirements needed for the project.

@@ -2,7 +2,7 @@
 :: **Dependencies**: None
 
 ::=============================================================::
-:: DEVELOPED 2013, REVISED 2013, Jeff Rimko.                   ::
+:: DEVELOPED 2013, REVISED 2016, Jeff Rimko.                   ::
 ::=============================================================::
 
 ::=============================================================::
@@ -32,7 +32,7 @@ call %BAT_CHKDEP%^
     "Python"^
     "Python language interpreter."^
     "www.python.org"^
-    "2.6.6"^
+    "2.7"^
     python -V
 echo.
 echo Global variable DEP_OK = %DEP_OK%
@@ -44,7 +44,7 @@ call %BAT_CHKDEP%^
     "Python"^
     "Python language interpreter."^
     "www.python.org"^
-    "2.6.6"^
+    "2.7"^
     python -V
 echo.
 echo Global variable DEP_OK = %DEP_OK%
