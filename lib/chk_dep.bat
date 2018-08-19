@@ -83,7 +83,7 @@ if [%1] neq [] (
     shift
     goto:chkdep_shift_next
 )
-%CMD% > NUL 2>&1
+call %CMD% > NUL 2>&1
 if %ERRORLEVEL% neq 0 (
     echo     NOT FOUND!
     set DEP_OK=0
@@ -150,13 +150,13 @@ if [%1] neq [] (
     shift
     goto:chkdepver_shift_next
 )
-%CMD% > NUL 2>&1
+call %CMD% > NUL 2>&1
 if %ERRORLEVEL% neq 0 (
     echo     NOT FOUND!
     set DEP_OK=0
     goto:eof
 )
-%CMD% 2>&1 | find "%DEP_VER%" >NUL
+call %CMD% 2>&1 | find "%DEP_VER%" >NUL
 if %ERRORLEVEL% neq 0 (
     echo     NOT FOUND!
     set DEP_OK=0
@@ -200,7 +200,7 @@ if [%1] neq [] (
     shift
     goto:chkdep_shift_next
 )
-%CMD% > NUL 2>&1
+call %CMD% > NUL 2>&1
 if %ERRORLEVEL% neq 0 (
     echo     NOT FOUND!
     set DEP_OK=0
