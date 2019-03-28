@@ -10,7 +10,7 @@ This project provides a library of general purpose Microsoft batch files. This l
 == Status
 The status of this project is **beta**. This project is suitable for use but there may be incompatibilities in new releases.
 
-== FAQ
+== Q&A
 [qanda]
 Who is this project for?::
     Anyone with the need to write batch scripts! Batch scripts are useful since they are practically guaranteed to execute on modern Microsoft platforms natively. An example usage would be to provide a dependency checking script with a project; this script would allow users to check if their machine meets the requirements needed for the project.
